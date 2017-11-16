@@ -1,5 +1,6 @@
 //your variable declarations here
 Floater bob = new Spaceship();
+Asteroid[] rock;
 Stars[] star;
 public void setup() 
 {
@@ -10,17 +11,28 @@ public void setup()
   {
     star[i] = new Stars();
   }
+  rock = new Asteroid[8];
+  for (int i = 0; i<rock.length; i++)
+  {
+    rock[i] = new Asteroid();
+  }
   //your code here
 }
 public void draw() 
 {
  background(0);
- bob.show();
- bob.move();
+ 
 for (int i = 0; i <star.length; i++)
 {
   star[i].show();
 }
+for (int i = 0; i<rock.length; i++)
+{
+  rock[i].show();
+  rock[i].move();
+}
+ bob.show();
+ bob.move();
   //your code here
 }
 public void keyPressed()
