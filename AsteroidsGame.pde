@@ -1,6 +1,7 @@
 //your variable declarations here
 Floater bob = new Spaceship();
-Asteroid[] rock;
+//Asteroid[] rock;
+ArrayList <Asteroid> rocklist;
 Stars[] star;
 public void setup() 
 {
@@ -11,11 +12,23 @@ public void setup()
   {
     star[i] = new Stars();
   }
-  rock = new Asteroid[8];
-  for (int i = 0; i<rock.length; i++)
+  //rock = new Asteroid[8];
+  rocklist = new ArrayList <Asteroid>();
+  for (int i = 0; i<8; i++)
   {
-    rock[i] = new Asteroid();
+     Asteroid rock = new Asteroid();
+     rocklist.add(rock);
   }
+ //for (int i = 0; i<rocklist.size(); i++);
+ //dist(rocklist.get(i).getX(),rocklist.get(i).getY(),bob.getX(), bob.getY());
+  //rocklist = new ArrayList <Asteroid>();
+  //Asteroid otherrock = new Asteroid();
+  //rocklist.add(otherrock);
+  //Asteroid rock = new Asteroid();
+  //rocklist.add(rock);
+  
+ 
+  
   //your code here
 }
 public void draw() 
@@ -26,11 +39,17 @@ for (int i = 0; i <star.length; i++)
 {
   star[i].show();
 }
-for (int i = 0; i<rock.length; i++)
+for (int i = 0; i< rocklist.size(); i++)
 {
-  rock[i].show();
-  rock[i].move();
+  rocklist.get(i).show();
+  rocklist.get(i).move();
+  if (dist( rocklist.get(i).getX(),rocklist.get(i).getY(),bob.getX(), bob.getY()) <10)
+  {
+    rocklist.remove(i);
+  }
 }
+
+ 
  bob.show();
  bob.move();
   //your code here
