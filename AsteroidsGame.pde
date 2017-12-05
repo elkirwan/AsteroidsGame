@@ -43,7 +43,7 @@ for (int i = 0; i< rocklist.size(); i++)
 {
   rocklist.get(i).show();
   rocklist.get(i).move();
-  if (dist( rocklist.get(i).getX(),rocklist.get(i).getY(),bob.getX(), bob.getY()) <10)
+  if (dist( rocklist.get(i).getX(),rocklist.get(i).getY(),bob.getX(), bob.getY()) <17)
   {
     rocklist.remove(i);
   }
