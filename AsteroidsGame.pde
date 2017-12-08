@@ -3,7 +3,8 @@ Floater bob = new Spaceship();
 //Asteroid[] rock;
 ArrayList <Asteroid> rocklist;
 Stars[] star;
-Floater shell = new Bullet(Spaceship.bob);
+//Floater shell = new Bullet( );
+Bullet[] shell;
 public void setup() 
 {
   background(30);
@@ -39,6 +40,7 @@ public void draw()
 for (int i = 0; i <star.length; i++)
 {
   star[i].show();
+  
 }
 for (int i = 0; i< rocklist.size(); i++)
 {
@@ -53,7 +55,8 @@ for (int i = 0; i< rocklist.size(); i++)
 
  bob.show();
  bob.move();
- shell.show();
+
+ 
   //your code here
 }
 public void keyPressed()
